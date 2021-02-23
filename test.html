@@ -1,11 +1,28 @@
 <html>
     <script>
+    
+    let PlayerSelection = "ROcK"
+
     function ComputerPlay() {
         let array = ['ROCK','PAPER','SCISSOR']
         let  element = Math.floor(Math.random() * array.length)
         return array[element]
     }
     console.log(ComputerPlay())
+    
+    let ComputerSelection = ComputerPlay()
+
+    function play(human,computer) {
+        let PlayerOption = human.Upper()
+        let ComputerOption = computer.Upper()
+
+        if (PlayerOption == "ROCK" && ComputerOption == "SCISSOR") {
+            return "You Win! Rock beats Scissor"
+        }
+        else if (PlayerOption == "ROCK" && ComputerOption == "PAPER")
+    }
+
+
     </script>
 
 </html>
