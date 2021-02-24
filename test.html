@@ -1,27 +1,59 @@
 <html>
     <script>
-    
-    let PlayerSelection = "ROcK"
-
     function ComputerPlay() {
         let array = ['ROCK','PAPER','SCISSOR']
         let  element = Math.floor(Math.random() * array.length)
         return array[element]
     }
-    console.log(ComputerPlay())
     
-    let ComputerSelection = ComputerPlay()
+    function game () {
+        let Pscore = 0;
+        let Cscore = 0
+        function play(human,computer) {
+            let PlayerOption = human.toUpperCase();
+            let ComputerOption = computer.toUpperCase();
+            
 
-    function play(human,computer) {
-        let PlayerOption = human.Upper()
-        let ComputerOption = computer.Upper()
-
-        if (PlayerOption == "ROCK" && ComputerOption == "SCISSOR") {
-            return "You Win! Rock beats Scissor"
+            if (PlayerOption === ComputerOption ) {
+                return "Tie"
+            }
+            else if (PlayerOption == "ROCK" && ComputerOption == "PAPER") {
+                Cscore++
+                return "You Lose!"
+            }
+            else if (PlayerOption == "ROCK" && ComputerOption == "SCISSOR") {
+                Pscore++
+                return "You Win!"
+            }
+            else if (PlayerOption == "SCISSOR" && ComputerOption == "ROCK") {
+                Cscore++
+                return "You Lose!"
+            }
+            else if (PlayerOption == "SCISSOR" && ComputerOption == "PAPER") {
+                Pscore++
+                return "You Win!"
+            }
+            else if (PlayerOption == "PAPER" && ComputerOption == "SCISSOR") {
+                Cscore++
+                return "You Lose!"
+            }
+            else if (PlayerOption == "PAPER" && ComputerOption == "ROCK") {
+                Pscore++
+                return "You Win!"
+            }
         }
-        else if (PlayerOption == "ROCK" && ComputerOption == "PAPER")
-    }
+        while (Pscore + Cscore <=5) {
+            let player = window.prompt()
+            let computer = ComputerPlay()
+            play(player,computer)
 
+            
+
+        }
+        return Pscore +  " - " + Cscore 
+        
+    }
+    console.log(game())
 
     </script>
 
